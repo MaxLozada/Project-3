@@ -1,11 +1,11 @@
 # Project Setup
 
-[![Production Workflow]()
+[![Production Workflow 1](https://github.com/MaxLozada/Project-3/actions/workflows/prod.yml/badge.svg)](https://github.com/MaxLozada/Project-3/actions/workflows/prod.yml)
 
 * [Production Deployment]()
 
 
-[![Development Workflow]()
+[![Development Workflow 3.8](https://github.com/MaxLozada/Project-3/actions/workflows/dev.yml/badge.svg)](https://github.com/MaxLozada/Project-3/actions/workflows/dev.yml)
 
 * [Developmental Deployment]()
 
