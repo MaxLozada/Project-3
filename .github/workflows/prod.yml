@@ -54,6 +54,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
+          google_api_key: ${{secrets.GOOGLE_API_KEY}}
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "maxproject-3-prod" #Must be unique in Heroku
           heroku_email: "ml644@njit.edu"
