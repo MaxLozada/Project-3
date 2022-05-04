@@ -1,9 +1,9 @@
-name: Development Workflow 1
+name: Development Workflow 3.8
 
 on:
   pull_request:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   run_pytest:
