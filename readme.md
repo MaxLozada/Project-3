@@ -1,4 +1,4 @@
-# Project Setup
+# Project-3
 
 [![Production Workflow 1](https://github.com/MaxLozada/Project-3/actions/workflows/prod.yml/badge.svg)](https://github.com/MaxLozada/Project-3/actions/workflows/prod.yml)
 
