@@ -71,7 +71,7 @@ def location_upload():
         with open(filepath) as file:
             csv_file = csv.DictReader(file)
             for row in csv_file:
-                list_of_locations.append(Location(row['location'],row['longitude'],row['latitude'],row['population']))
+                list_of_locations.append(Location(row['location'],row['longitude'],row['latitude'],row['population'],))
 
         current_user.locations = list_of_locations
         db.session.commit()
@@ -82,3 +82,52 @@ def location_upload():
         return render_template('upload_locations.html', form=form)
     except TemplateNotFound:
         abort(404)
+
+@map.route('/locations/<int:location_id>/edit', methods=['POST', 'GET'])
+@login_required
+def edit_location(location_id):
+    location = Location.query.get(location_id)
+    form = location_edit_form(obj=location)
+    if form.validate_on_submit():
+        location.population = form.population.data
+        #user.is_admin = int(form.is_admin.data)
+        db.session.add(location)
+        db.session.commit()
+        flash('Location Edited Successfully', 'success')
+        current_app.logger.info("edited a location")
+        return redirect(url_for('map.browse_locations'))
+    return render_template('location_edit.html', form=form)
+
+
+@map.route('/locations/new', methods=['POST', 'GET'])
+@login_required
+def add_location():
+    form = create_location_form()
+    if form.validate_on_submit():
+        title = Location.query.filter_by(title=form.title.data).first()
+        if title is None:
+            location = Location(title=form.title.data, longitude=form.longitude.data, latitude=form.latitude.data, population=form.population.data)
+            db.session.add(location)
+            db.session.commit()
+            flash('Congratulations, you just created a location', 'success')
+            return redirect(url_for('map.browse_locations'))
+        else:
+            flash('Already Exists')
+            return redirect(url_for('map.browse_locations'))
+    return render_template('location_new.html', form=form)
+
+
+@map.route('/locations/<int:location_id>/delete', methods=['POST'])
+@login_required
+def delete_location(location_id):
+    location = Location.query.get(location_id)
+    db.session.delete(location)
+    db.session.commit()
+    flash('Location Deleted', 'success')
+    return redirect(url_for('map.browse_locations'), 302)
+
+
+@map.route('/locations/<int:user_id>')
+def retrieve_location(location_id):
+    location = Location.query.get(location_id)
+    return render_template('profile_view.html', location=location)
