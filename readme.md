@@ -9,6 +9,8 @@
 
 * [Developmental Deployment](https://maxproject-3-dev.herokuapp.com/)
 
+The maps page works on mobile and locally but isn't appearing on when on desktop.
+
 if admin access is needed use the following:
 email: ml644@gmail.com
 password: Password1@
