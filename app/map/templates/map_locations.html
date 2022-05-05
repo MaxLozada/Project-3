@@ -26,10 +26,10 @@
 
             function initMap() {
 
-                let xmlHttpsReq = new XMLHttpsRequest();
-                xmlHttpsReq.open("GET", "/api/locations", false);
-                xmlHttpsReq.send(null);
-                locations = JSON.parse(xmlHttpsReq.responseText);
+                let xmlHttpReq = new XMLHttpRequest();
+                xmlHttpReq.open("GET", "/api/locations", false);
+                xmlHttpReq.send(null);
+                locations = JSON.parse(xmlHttpReq.responseText);
                 const myLatLng = {
                     lat: parseFloat(locations["data"][0].lat),
                     lng: parseFloat(locations["data"][0].long)
