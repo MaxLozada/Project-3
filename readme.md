@@ -9,6 +9,10 @@
 
 * [Developmental Deployment](https://maxproject-3-dev.herokuapp.com/)
 
+if admin access is needed use the following:
+email: ml644@gmail.com
+password: Password1@
+
 ## Setting up CI/CD
 
 The result of this will be that when you create a pull request to merge a branch to master, it will deploy to your
