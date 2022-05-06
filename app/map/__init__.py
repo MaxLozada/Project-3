@@ -78,8 +78,7 @@ def location_upload():
         with open(filepath) as file:
             csv_file = csv.DictReader(file)
             for row in csv_file:
-                list_of_locations.append(
-                    Location(row['location'], row['longitude'], row['latitude'], row['population']))
+                list_of_locations.append(Location(row['location'],row['longitude'],row['latitude'],row['population']))
 
         current_user.locations = list_of_locations
         db.session.commit()
