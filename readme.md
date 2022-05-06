@@ -15,7 +15,7 @@
 1. To Build with docker compose:
    docker compose up --build
 2. To run tests, Lint, and Coverage report use this command: pytest --pylint --cov
-3. Remove if using <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+3. Remove if using "<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">"
 
 ## Running on HTTPS
 1. Use <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
