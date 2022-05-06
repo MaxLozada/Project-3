@@ -9,10 +9,6 @@
 
 * [Developmental Deployment](https://maxproject-3-dev.herokuapp.com/)
 
-If needed for admin access use the following credentials:
-email: ml644@gmail.com
-password: Password1@
-
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Instructions
