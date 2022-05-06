@@ -3,7 +3,7 @@ import json
 import logging
 import os
 
-from flask import Blueprint, render_template, abort, url_for, current_app, jsonify, flash
+from flask import Blueprint, render_template, abort, url_for, current_app, jsonify
 from flask_login import current_user, login_required
 from jinja2 import TemplateNotFound
 
@@ -12,11 +12,9 @@ from app.db.models import Location
 from app.songs.forms import csv_upload
 from werkzeug.utils import secure_filename, redirect
 from flask import Response
-from app.map.forms import location_form
 
 map = Blueprint('map', __name__,
-                template_folder='templates')
-
+                        template_folder='templates')
 
 @map.route('/locations', methods=['GET'], defaults={"page": 1})
 @map.route('/locations/<int:page>', methods=['GET'])
@@ -25,32 +23,26 @@ def browse_locations(page):
     per_page = 10
     pagination = Location.query.paginate(page, per_page, error_out=False)
     data = pagination.items
-    add_url = url_for("map.add_location")
-    edit_url = ("map.edit_location", [("location_id", ":id")])
-    delete_url = ('map.delete_location', [('location_id', ':id')])
     try:
-        return render_template('browse_locations.html', data=data, pagination=pagination, add_url=add_url, edit_url=edit_url, delete_url=delete_url, Location=Location)
+        return render_template('browse_locations.html',data=data,pagination=pagination)
     except TemplateNotFound:
         abort(404)
-
 
 @map.route('/locations_datatables/', methods=['GET'])
 def browse_locations_datatables():
+
     data = Location.query.all()
 
     try:
-        return render_template('browse_locations_datatables.html', data=data)
+        return render_template('browse_locations_datatables.html',data=data)
     except TemplateNotFound:
         abort(404)
 
-
 @map.route('/api/locations/', methods=['GET'])
 def api_locations():
-    # data = current_user.locations  # get list of user owned locations
-    data = Location.query.all()  # get list of ALL locations
-    data = jsonify(data=[location.serialize() for location in data])
+    data = Location.query.all()
     try:
-        return data
+        return jsonify(data=[location.serialize() for location in data])
     except TemplateNotFound:
         abort(404)
 
@@ -61,9 +53,10 @@ def map_locations():
     log = logging.getLogger("myApp")
     log.info(google_api_key)
     try:
-        return render_template('map_locations.html', google_api_key=google_api_key)
+        return render_template('map_locations.html',google_api_key=google_api_key)
     except TemplateNotFound:
         abort(404)
+
 
 
 @map.route('/locations/upload', methods=['POST', 'GET'])
