@@ -10,6 +10,12 @@
 * [Developmental Deployment](https://maxproject-3-dev.herokuapp.com/)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+If account information needed try this:
+email    - example1@gmail.com
+password - Password1@
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Running Locally
 
 1. To Build with docker compose:
