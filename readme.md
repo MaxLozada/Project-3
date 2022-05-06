@@ -10,6 +10,17 @@
 * [Developmental Deployment](https://maxproject-3-dev.herokuapp.com/)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+## Running Locally
+
+1. To Build with docker compose:
+   docker compose up --build
+2. To run tests, Lint, and Coverage report use this command: pytest --pylint --cov
+3. Remove if using <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+## Running on HTTPS
+1. Use <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+.pylintrc is the config for pylint, .coveragerc is the config for coverage and setup.py is a config file for pytest
 
 ### Instructions
 
@@ -35,10 +46,3 @@
 11. Push code to your local repo and check for any errors and fix any errors that appear when the workflow is running. You can check the workflow in the
     actions.
 
-## Running Locally
-
-1. To Build with docker compose:
-   docker compose up --build
-2. To run tests, Lint, and Coverage report use this command: pytest --pylint --cov
-
-.pylintrc is the config for pylint, .coveragerc is the config for coverage and setup.py is a config file for pytest
