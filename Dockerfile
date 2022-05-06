@@ -5,6 +5,7 @@ ENV PORT=5000
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_ENV=production
 ENV DATABASE_URL=sqlite:////home/myuser/database/db.sqlite
+ENV GOOGLE_API_KEY=AIzaSyAdaKDjt-rFgTpGooHvXbKX-RvtKRvI5eU
 ENV PATH="/home/myuser/.local/bin:${PATH}"
 RUN apt-get update &&\
     /usr/local/bin/python3 -m pip install --upgrade pip &&\
