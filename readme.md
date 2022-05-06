@@ -8,9 +8,6 @@
 [![Development Workflow 3.8](https://github.com/MaxLozada/Project-3/actions/workflows/dev.yml/badge.svg)](https://github.com/MaxLozada/Project-3/actions/workflows/dev.yml)
 
 * [Developmental Deployment](https://maxproject-3-dev.herokuapp.com/)
--------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Noticed an Error appeared recently which reads as "Error: Error: Command failed: heroku container:login" thing is everything still works. Might fix itself. Will keeps watch. 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Running Locally
@@ -20,12 +17,13 @@ Noticed an Error appeared recently which reads as "Error: Error: Command failed:
 2. To run tests, Lint, and Coverage report use this command: pytest --pylint --cov
 3. Remove if using \<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Running on HTTPS
 1. Use \<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 .pylintrc is the config for pylint, .coveragerc is the config for coverage and setup.py is a config file for pytest
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Instructions
 
 1. Clone this repo to your local (DO NOT FORK THIS REPO, IF YOU DO YOU HAVE TO ENABLE ACTIONS BEFORE ANYTHING RUNS)
@@ -33,13 +31,15 @@ Noticed an Error appeared recently which reads as "Error: Error: Command failed:
 3. Change the origin by replacing it with your own new repo.  (Do not add a readme or any other file while creating the repository)
 4. Create an account with Heroku, create an app for production and an app for development
 5. Create a new repo in Docker hub
-
+6. 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Setup Docker and Heroku Credentials In the Repository Settings under Action -> Secret
 
 6. In your newly created Github repository, add new repository secrets for DOCKER_USERNAME, DOCKER_PASSWORD, HEROKU_API_KEY (Values are DOCKER_USERNAME: your docker hub username; DOCKER_PASSWORD: your docker hub password; HEROKU_API_KEY: API key from the heroku app)
 ### GitHub Notes:  Set the action secrets repository in: -> settings -> actions -> secrets
 ### Heroku Notes: Get the heroku API key from account in: -> applications -> create authorization button
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Change GitHub Actions Workflows for Dev and Prod
 
 6. Change line 42 to have your docker repo address in: .github/workflows/prod.yml
