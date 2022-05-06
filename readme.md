@@ -19,7 +19,7 @@
 
 
 ## Running on HTTPS
-1. Use <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+1. Use \<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 .pylintrc is the config for pylint, .coveragerc is the config for coverage and setup.py is a config file for pytest
 
