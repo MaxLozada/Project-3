@@ -8,6 +8,9 @@
 [![Development Workflow 3.8](https://github.com/MaxLozada/Project-3/actions/workflows/dev.yml/badge.svg)](https://github.com/MaxLozada/Project-3/actions/workflows/dev.yml)
 
 * [Developmental Deployment](https://maxproject-3-dev.herokuapp.com/)
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Noticed an Error appeared recently which reads as "Error: Error: Command failed: heroku container:login" thing is everything still works. Might fix itself. Will keeps watch. 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Running Locally
