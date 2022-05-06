@@ -1,14 +1,18 @@
 {% extends "base.html" %}
-{% block content %}
-{% from 'bootstrap5/form.html' import render_form, render_field, render_form_row %}
+{% from 'bootstrap5/table.html' import render_table %}
+{% from "bootstrap5/pagination.html" import render_pagination %}
 
-<div class="row">
 
-    <div class="mx-auto">
-        <h2>Manage Location</h2>
-        {{ render_form(form) }}
-    </div>
+<div class="row col-8">
+    {% block title %}Browse: {{ record_type }}{% endblock %}
+    {% block content %}
+        <h2>Edit Location</h2>
+        {{ render_table(data, show_actions=True, new_url=add_url, edit_url=edit_url, delete_url=delete_url, model=Location) }}
+        {% from 'bootstrap5/pagination.html' import render_pagination %}
+
+        {{ render_pagination(pagination) }}
+
+
+
+    {% endblock %}
 </div>
-
-
-{% endblock %}
