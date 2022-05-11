@@ -14,6 +14,8 @@ If account information needed try this:
 email    - example1@gmail.com
 password - Password1@
 
+Also I added the us_cities_short csv file if needed to test upload and map
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Running Locally
